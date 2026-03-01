@@ -3,6 +3,8 @@ import { menus } from "../../constents";
 import { GrRadialSelected } from "react-icons/gr";
 import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
+import { addItems } from "../../redux/slices/cartSlice";
+
 
 
 
@@ -29,7 +31,7 @@ const MenuContainer = () => {
 
     const {name , price} = item;
     const newobject = {
-      id: new Data(),name, priceperQuantity: price,quantity:itemCount,price: price * itemCount
+      id: new Date(),name, priceperQuantity: price,quantity:itemCount,price: price * itemCount
     };
     dispatch(addItems(newobject));
     setItemCount(0);
