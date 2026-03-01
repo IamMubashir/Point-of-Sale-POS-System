@@ -2,10 +2,18 @@ import React from 'react'
 import { RiDeleteBin2Fill } from 'react-icons/ri'
 import { FaNotesMedical } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { removeItem } from '../../redux/slices/cartSlice';
 
 const CartInfo = () => {
 
     const cartData = useSelector(state => state.cart);
+
+    const dispatch = useDispatch();
+    const hundleRemove = (itemId) =>{
+        dispatch(removeItem(itemId));
+    }
+
   return (
     <div className='px-4 py-2'>
             <h1 className='text-lg text-[#e4e4e4] font-semibold tracking-wide'>Order Details</h1>
@@ -22,7 +30,10 @@ const CartInfo = () => {
                     </div>
                     <div className='flex items-center justify-between mt-3'>
                         <div className='flex items-center gap-3'>
-                            <RiDeleteBin2Fill className='text-[#ababab] cursor-pointer' size={20} />
+                            <RiDeleteBin2Fill 
+                            onClick={() => hundleRemove(item.id)}
+                            
+                            className='text-[#ababab] cursor-pointer' size={20} />
                             <FaNotesMedical  className='text-[#ababab] cursor-pointer' size={20} />
                         </div>
                         <p className='text-[#f5f5f5] text-md font-bold'>Rs. {item.price}</p>
