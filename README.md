@@ -66,7 +66,7 @@ This **Restaurant POS System** provides a centralized, digital platform that imp
 
 ### Clone Repository
 
-git clone https://github.com/IamMubashir/Point-of-sale-system.git
+git clone https://github.com/IamMubashir/Point-of-Sale-POS-System.git
 cd restaurant-pos-system
 
 ---
