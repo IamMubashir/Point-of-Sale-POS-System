@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useRef } from 'react'
 import { RiDeleteBin2Fill } from 'react-icons/ri'
 import { FaNotesMedical } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { removeItem } from '../../redux/slices/cartSlice';
-import { useRef } from 'react';
+
 
 
 
@@ -31,7 +31,7 @@ const CartInfo = () => {
   return (
     <div className='px-4 py-2'>
             <h1 className='text-lg text-[#e4e4e4] font-semibold tracking-wide'>Order Details</h1>
-            <div className='mt-4 overflow-y-scrollbar scrollbar-hide h-[380px]' ref={scrolLRef}>
+            <div className='mt-4 h-[380px] overflow-y-auto scrollbar-hide' ref={scrolLRef}>
                
                {cartData.length === 0 ? (
                 <p className='text-[#ababab] text-sm flex justify-center items-center h-[380px]'>Your cart is empty. Start adding items!</p>
